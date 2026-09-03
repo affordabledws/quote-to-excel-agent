@@ -1,21 +1,20 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quote-to-Excel Master Rules</title><style>body{font-family:Segoe UI,Arial,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;line-height:1.55;color:#1f2937}h1,h2{color:#0f4c81}h1{border-bottom:3px solid #0f4c81;padding-bottom:10px}section{margin:24px 0}code,pre{background:#f3f5f7;padding:3px 6px;border-radius:4px}pre{white-space:pre-wrap;padding:14px}</style></head><body>
 <h1>Quote-to-Excel Master Rules and Examples</h1><p><strong>Approved after first full testing round</strong></p>
-<section><h2>Header style</h2><p>Use the same natural style for every manufacturer. Include exact company, material, all applicable product categories, all series on one line, exterior, interior, glass without intercept spacer, common hardware, and screen color/coverage. Example:</p><pre>UNITED VINYL WINDOWS AND GLASS AND SASH
+<section><h2>First header</h2><p>The first HEADER is always the quote/project name from the new quote. Example:</p><pre>MENS ET MANUS LLC - COPY OF 29 HENRY</pre><p>The general-description header is separate.</p></section>
+<section><h2>General header style</h2><p>Use the same natural style for every manufacturer. Include exact company, material, applicable product categories, all series on one line, exterior, interior, glass without intercept spacer, common hardware, and screen color/coverage:</p><pre>UNITED VINYL WINDOWS AND GLASS AND SASH
 1800 REPLACEMENT SERIES
 WHITE EXTERIOR
 WHITE INTERIOR
 LOW-E7-N, SINGLE STRENGTH, ARGON
 WHITE HARDWARE, DOUBLE LOCKS
 WHITE FULL SCREENS</pre><p>For vinyl only, include REPLACEMENT or NEW CONSTRUCTION when explicit. Never include Unit Size or Rough Opening in the header.</p></section>
-<section><h2>Row style</h2><p>Every row begins with short series plus operation/type. Add explicit unit code on that line when present. A regular complete-unit row uses its normal product operation/type only:</p><pre>1800 SINGLE HUNG
-UNIT SIZE: 35.5" x 64"
-ROUGH OPENING: 36" x 64.5" SINGLE HUNG</pre><p>For every non-regular item, state whatever the item actually is, including its position or description when explicit. The rule applies to any item type, not only the examples below:</p><pre>1800 SINGLE HUNG, SASH ONLY - BOTTOM
-1800 SINGLE HUNG, GLASS ONLY - TOP
-1800 SINGLE HUNG, MULL
-1800 SINGLE HUNG, PART
-1800 SINGLE HUNG, FRAME
-1800 SINGLE HUNG, SCREEN
-1800 SINGLE HUNG, HARDWARE
-1800 SINGLE HUNG, ACCESSORY</pre><p>Never label a regular complete unit as a non-regular item. If a row matches the header, include only the base first line, explicit unit code/non-regular type if applicable, Unit Size, and Rough Opening. If different, insert only explicit differences on separate lines before the sizes. Never repeat header data.</p></section>
-<section><h2>Core rules</h2><p>Keep exact PDF order. Separately listed items stay separate rows. Tax is No on every row. Correct OCR only in location names. Rates use exactly two decimals. Hidden fractional-cent differences must not be forced to match; always return the workbook and report the exact LESS/MORE difference. Reference use is limited to layout, row order, floor placement, and Tag naming style.</p></section>
+<section><h2>Original order, PO, and other notes</h2><p>If ORIGINAL ORDER NUMBER/PO appears, always add it to the general header on its own line, for example <code>ORIGINAL ORDER NUMBER/PO: #1642336</code>. If it differs by item, put the applicable value only in that row.</p><p>Read the remainder of the note, such as <code>CUSTOMER NOW WANTS LOW E7N GLASS</code>, but do not automatically add non-PO note text. Return the completed workbook, quote the note to the user, and ask whether to add it. If the user says yes, update the workbook and return a new download.</p></section><section><h2>Row style</h2><p>The first thing in each row is the actual item type and explicit position, then the short series and operation:</p><pre>GLASS - TOP ONLY 1800 SINGLE HUNG
+SASH - BOTTOM ONLY 1800 SINGLE HUNG
+MULL 1800 SINGLE HUNG
+PART 1800 SINGLE HUNG
+SCREEN 1800 SINGLE HUNG
+WINDOW 1800 SINGLE HUNG</pre><p>Use whatever item type the quote actually identifies. Do not limit non-regular items to glass or sash. Then show only explicit differences from the header.</p><p>The last things in every row must be:</p><pre>UNIT CODE: [CODE]   only when explicit
+UNIT SIZE: [WIDTH] x [HEIGHT]
+ROUGH OPENING: [WIDTH] x [HEIGHT] [OPERATION]</pre><p>If no code exists, omit UNIT CODE. Never repeat common header specifications.</p></section>
+<section><h2>Core rules</h2><p>Keep exact PDF order. Separately listed items stay separate rows. Tax is No on every row. Correct OCR only in location names. Rates use exactly two decimals. Hidden fractional-cent differences must not be forced to match; always return the workbook and state the exact LESS/MORE difference. Reference use is limited to layout, row order, floor placement, and Tag naming style.</p></section>
 </body></html>
