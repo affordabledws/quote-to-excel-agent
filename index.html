@@ -1,22 +1,21 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quote-to-Excel Master Rules</title><style>body{font-family:Segoe UI,Arial,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;line-height:1.55;color:#1f2937}h1,h2{color:#0f4c81}h1{border-bottom:3px solid #0f4c81;padding-bottom:10px}section{margin:24px 0}code,pre{background:#f3f5f7;padding:3px 6px;border-radius:4px}pre{white-space:pre-wrap;padding:14px}</style></head><body>
-<h1>Quote-to-Excel Master Rules and Examples</h1><p><strong>Approved version: September 3, 2026</strong></p>
-<section><h2>Purpose</h2><p>Convert the new quote PDF into the exact attached blank Excel template. Require both files. Current instructions override these rules. The new quote controls products, quantities, prices, specifications, locations, and order. Never guess or create a substitute workbook.</p></section>
-<section><h2>Reference / Ref</h2><p>A reference requires a new quote first.</p><ul><li>If a PDF is attached with REFERENCE or REF, treat the attached PDF as the REFERENCE QUOTE and the immediately preceding quote in the same conversation as the NEW QUOTE, only if available.</li><li>If nothing is attached with REFERENCE or REF, treat the immediately preceding quote as REFERENCE QUOTE and the quote immediately before that as NEW QUOTE, only if both are available.</li></ul><p>Reference use is limited to layout, row order, floor placement, and Tag naming style. Never copy its products, quantities, prices, descriptions, Item Names, specifications, duplicates, or mistakes. Delivery Charge is the only reference price allowed and only when expressly authorized.</p><p>If one file is unavailable, request only that file. If both are missing, unavailable, or ambiguous, request them separately: first “Please attach the new quote PDF.” Then “Please attach the reference quote PDF.” Identify NEW QUOTE vs REFERENCE QUOTE before processing.</p></section>
-<section><h2>Template and rows</h2><p>Preserve sheets, table, headers, columns, formatting, dimensions, number formats, formulas, and settings. Columns: Channel SKU, Barcode, Item Name, Description, Qty, Rate, Tax, Tag. Tax = No on every row. Process exact PDF order. Separately listed parts, sashes, glass, mulls, and accessories remain separate rows with all explicit information.</p></section>
-<section><h2>Header format</h2><p>General header lists every company and series. Put each explicit category on its own line:</p><pre>COMPANY: ANDERSEN
-SERIES: 400 SERIES
-PAINT/EXTERIOR: WHITE
-INTERIOR: UNFINISHED
-GLASS: LOW-E4 WITH ARGON
-GRILLES: COLONIAL; [W X H PANES/BARS when common]
-HARDWARE: WHITE
-SCREENS: FULL SCREENS; COLOR: [SCREEN COLOR]</pre><p>Use FULL SCREENS, HALF SCREENS, or NO SCREENS. Include explicit screen color but never screen material. RO is never in the header.</p></section>
-<section><h2>Rows and RO</h2><p>Put every applicable category on a separate line. Include explicit screen color when different from the header or when no common screen color exists. Put full explicit RO last:</p><pre>RO: [WIDTH] x [HEIGHT]</pre><p>RO is for rows only. Never substitute unit size or calculate RO unless explicitly supported.</p><p>For stacked units preserve physical order:</p><pre>TOP: [WIDTH x HEIGHT] [OPERATION]
-/
-BOTTOM: [WIDTH x HEIGHT] [OPERATION]</pre></section>
-<section><h2>Grouping and features</h2><p>Keep components with the parent only when not separately listed/priced. State common multi-unit features once. If only some units have a feature, identify physical position when applicable, otherwise unit number: TOP TEMPERED, BOTTOM OBSCURED, or UNIT 2 TEMPERED.</p></section>
-<section><h2>Grilles</h2><p>Put common grille style, thickness, method, and pane/bar basis only in the header. Rows state differences and line-specific counts. Counts represent the full assembly. For double-hung/sliding/similar, combine both glass/sash counts. If each glass is 2 x 2 panes, write 2 x 4 PANES. Do not multiply a full-product count.</p></section>
-<section><h2>Math and output</h2><p>Verify line calculations, independent Qty x Rate totals, and overall reconciliation. If hidden fractional cents cause a mismatch, never manipulate a line to force a match. Always return the Excel download and report exactly:</p><pre>Excel total is $[AMOUNT] LESS than the quote total.
-or
-Excel total is $[AMOUNT] MORE than the quote total.</pre><p>Use the PDF filename, change extension to .xlsx, replace spaces with underscores, remove parentheses, #, and %, and replace &amp; with AND. Always return a clickable workbook even when totals differ.</p></section>
+<h1>Quote-to-Excel Master Rules and Examples</h1><p><strong>Approved after first full testing round</strong></p>
+<section><h2>Header style</h2><p>Use the same natural style for every manufacturer. Include exact company, material, all applicable product categories, all series on one line, exterior, interior, glass without intercept spacer, common hardware, and screen color/coverage. Example:</p><pre>UNITED VINYL WINDOWS AND GLASS AND SASH
+1800 REPLACEMENT SERIES
+WHITE EXTERIOR
+WHITE INTERIOR
+LOW-E7-N, SINGLE STRENGTH, ARGON
+WHITE HARDWARE, DOUBLE LOCKS
+WHITE FULL SCREENS</pre><p>For vinyl only, include REPLACEMENT or NEW CONSTRUCTION when explicit. Never include Unit Size or Rough Opening in the header.</p></section>
+<section><h2>Row style</h2><p>Every row begins with short series plus operation/type. Add explicit unit code on that line when present. A regular complete-unit row uses its normal product operation/type only:</p><pre>1800 SINGLE HUNG
+UNIT SIZE: 35.5" x 64"
+ROUGH OPENING: 36" x 64.5" SINGLE HUNG</pre><p>For every non-regular item, state whatever the item actually is, including its position or description when explicit. The rule applies to any item type, not only the examples below:</p><pre>1800 SINGLE HUNG, SASH ONLY - BOTTOM
+1800 SINGLE HUNG, GLASS ONLY - TOP
+1800 SINGLE HUNG, MULL
+1800 SINGLE HUNG, PART
+1800 SINGLE HUNG, FRAME
+1800 SINGLE HUNG, SCREEN
+1800 SINGLE HUNG, HARDWARE
+1800 SINGLE HUNG, ACCESSORY</pre><p>Never label a regular complete unit as a non-regular item. If a row matches the header, include only the base first line, explicit unit code/non-regular type if applicable, Unit Size, and Rough Opening. If different, insert only explicit differences on separate lines before the sizes. Never repeat header data.</p></section>
+<section><h2>Core rules</h2><p>Keep exact PDF order. Separately listed items stay separate rows. Tax is No on every row. Correct OCR only in location names. Rates use exactly two decimals. Hidden fractional-cent differences must not be forced to match; always return the workbook and report the exact LESS/MORE difference. Reference use is limited to layout, row order, floor placement, and Tag naming style.</p></section>
 </body></html>
