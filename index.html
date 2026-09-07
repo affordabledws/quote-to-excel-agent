@@ -1,20 +1,17 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quote-to-Excel Master Rules</title><style>body{font-family:Segoe UI,Arial,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;line-height:1.55;color:#1f2937}h1,h2{color:#0f4c81}h1{border-bottom:3px solid #0f4c81;padding-bottom:10px}section{margin:24px 0}code,pre{background:#f3f5f7;padding:3px 6px;border-radius:4px}pre{white-space:pre-wrap;padding:14px}</style></head><body>
-<h1>Quote-to-Excel Master Rules and Examples</h1><p><strong>Approved after first full testing round</strong></p>
-<section><h2>First header</h2><p>The first HEADER is always the quote/project name from the new quote. Example:</p><pre>MENS ET MANUS LLC - COPY OF 29 HENRY</pre><p>The general-description header is separate.</p></section>
-<section><h2>General header style</h2><p>Use the same natural style for every manufacturer. Include exact company, material, applicable product categories, all series on one line, exterior, interior, glass without intercept spacer, common hardware, and screen color/coverage:</p><pre>UNITED VINYL WINDOWS AND GLASS AND SASH
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quote-to-Excel Master Rules</title><style>body{font-family:Segoe UI,Arial,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;line-height:1.55;color:#1f2937}h1,h2{color:#0f4c81}pre{white-space:pre-wrap;background:#f3f5f7;padding:14px;border-radius:4px}section{margin:24px 0}</style></head><body>
+<h1>Quote-to-Excel Master Rules</h1><p><strong>Updated after workbook formatting and row-size testing</strong></p>
+<section><h2>Exact template formatting</h2><p>Use the attached workbook as output and preserve it exactly. Never add, remove, recolor, or restyle rows/cells. Preserve sheets, table, headers, column order, colors, fills, fonts, borders, widths, row heights, number formats, formulas, and settings. If anything differs, return the workbook and identify the formatting difference.</p></section>
+<section><h2>Headers</h2><p>First HEADER is the quote/project name, e.g. MENS ET MANUS LLC - COPY OF 29 HENRY. The general header uses natural lines:</p><pre>UNITED VINYL WINDOWS AND GLASS AND SASH
 1800 REPLACEMENT SERIES
 WHITE EXTERIOR
 WHITE INTERIOR
 LOW-E7-N, SINGLE STRENGTH, ARGON
 WHITE HARDWARE, DOUBLE LOCKS
-WHITE FULL SCREENS</pre><p>For vinyl only, include REPLACEMENT or NEW CONSTRUCTION when explicit. Never include Unit Size or Rough Opening in the header.</p></section>
-<section><h2>Original order, PO, and other notes</h2><p>If ORIGINAL ORDER NUMBER/PO appears, always add it to the general header on its own line, for example <code>ORIGINAL ORDER NUMBER/PO: #1642336</code>. If it differs by item, put the applicable value only in that row.</p><p>Read the remainder of the note, such as <code>CUSTOMER NOW WANTS LOW E7N GLASS</code>, but do not automatically add non-PO note text. Return the completed workbook, quote the note to the user, and ask whether to add it. If the user says yes, update the workbook and return a new download.</p></section><section><h2>Row style</h2><p>The first thing in each row is the actual item type and explicit position, then the short series and operation:</p><pre>GLASS - TOP ONLY 1800 SINGLE HUNG
-SASH - BOTTOM ONLY 1800 SINGLE HUNG
-MULL 1800 SINGLE HUNG
-PART 1800 SINGLE HUNG
-SCREEN 1800 SINGLE HUNG
-WINDOW 1800 SINGLE HUNG</pre><p>Use whatever item type the quote actually identifies. Do not limit non-regular items to glass or sash. Then show only explicit differences from the header.</p><p>The last things in every row must be:</p><pre>UNIT CODE: [CODE]   only when explicit
-UNIT SIZE: [WIDTH] x [HEIGHT]
-ROUGH OPENING: [WIDTH] x [HEIGHT] [OPERATION]</pre><p>If no code exists, omit UNIT CODE. Never repeat common header specifications.</p></section>
-<section><h2>Core rules</h2><p>Keep exact PDF order. Separately listed items stay separate rows. Tax is No on every row. Correct OCR only in location names. Rates use exactly two decimals. Hidden fractional-cent differences must not be forced to match; always return the workbook and state the exact LESS/MORE difference. Reference use is limited to layout, row order, floor placement, and Tag naming style.</p></section>
+NO SCREENS</pre><p>The screen line is mandatory: colored FULL SCREENS, colored HALF SCREENS, or NO SCREENS. Never state screen material.</p></section>
+<section><h2>Original order/PO and notes</h2><p>Always add explicit ORIGINAL ORDER NUMBER/PO to the header, or only to its row if item-specific. Read other note text but do not add it automatically. Return the workbook, quote the note, and ask whether to add it. If yes, update and return a new download.</p></section>
+<section><h2>Rows and sizes</h2><p>First line = actual item type/position + short series + operation. Then only differences from header. Last lines:</p><pre>UNIT CODE: [CODE] only when explicit
+UNIT SIZE: 33.25" x 61.25"
+ROUGH OPENING: 33.5" x 61.5" [operation/handing only when needed]</pre><p>Never use “-in”. Do not add OPERATING/VENTING or repeat operation after RO for SINGLE HUNG, DOUBLE HUNG, FIXED, or similar products already clear in the first line. Add specific operation/handing for sliders, casements, doors, mixed assemblies, and other configurations where handing matters.</p></section>
+<section><h2>Rates and totals</h2><p>Store actual Rate values rounded to exactly two decimals, never floating-point artifacts. If hidden fractional cents cause a quote/Excel difference, do not force a match. Always return the workbook and state the exact LESS/MORE difference.</p></section>
+<section><h2>Other rules</h2><p>Keep exact PDF order. Separately listed items remain separate rows. Tax is No on every row. Correct OCR only in location names. Preserve reference restrictions, mapping rules, grouping rules, grille full-assembly counts, TOP/BOTTOM order, and filename cleanup.</p></section>
 </body></html>
