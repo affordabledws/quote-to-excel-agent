@@ -1,4 +1,6 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quote-to-Excel Master Rules</title><style>body{font-family:Segoe UI,Arial,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;line-height:1.55;color:#1f2937}h1,h2{color:#0f4c81}pre{white-space:pre-wrap;background:#f3f5f7;padding:14px;border-radius:4px}section{margin:24px 0}</style></head><body><h1>Quote-to-Excel Master Rules</h1><p><strong>Updated after line-number and row-layout testing</strong></p><section><h2>Exact template</h2><p>Preserve the attached workbook exactly. Never add colors, fills, styles, borders, or other formatting. Report any difference.</p></section><section><h2>Headers</h2><pre>MENS ET MANUS LLC - COPY OF 29 HENRY</pre><p>General header:</p><pre>UNITED VINYL WINDOWS AND GLASS AND SASH
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quote-to-Excel Master Rules</title><style>body{font-family:Segoe UI,Arial,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;line-height:1.55;color:#1f2937}h1,h2{color:#0f4c81}pre{white-space:pre-wrap;background:#f3f5f7;padding:14px;border-radius:4px}section{margin:24px 0}</style></head><body><h1>Quote-to-Excel Master Rules</h1><p><strong>Updated after spacing, rate-storage, and floor-header testing</strong></p>
+<section><h2>Template formatting</h2><p>Preserve the attached workbook exactly. Never add, remove, recolor, or restyle rows/cells, including alternating row colors. If formatting differs, return the workbook and identify the exact difference.</p></section>
+<section><h2>Headers</h2><p>First HEADER is the quote/project name. Create one general-description HEADER. Create HEADER rows only for floors, such as 1ST FLOOR and 2ND FLOOR. Never create room/location headers. Rooms such as Front room, Kitchen, Back room, and Bathroom belong only in Tag.</p><p>List only product categories actually in the quote. Do not add WINDOWS when the quote contains only GLASS and SASH. General-header example only:</p><pre>UNITED VINYL GLASS AND SASH
 1800 REPLACEMENT SERIES
 WHITE EXTERIOR
 WHITE INTERIOR
@@ -6,12 +8,13 @@ LOW-E7-N, SINGLE STRENGTH, ARGON
 WHITE HARDWARE, DOUBLE LOCKS
 NO SCREENS
 _
-ORIGINAL ORDER NUMBER/PO: #1642336
-CUSTOMER NOW WANTS LOW E7N GLASS</pre><p>Screen line is mandatory. Add explicit PO automatically. Ask before adding other note text.</p></section><section><h2>Examples are not job data</h2><p>Every displayed company, series, operation, item type, position, code, size, color, and feature is an example only. For every new job, scan and verify the actual quote line by line and use only values explicitly shown in that quote. Never copy example values or infer missing details.</p></section><section><h2>Rows</h2><p>Never add a separate WINDOW/SASH/GLASS line and never write UNIT LINE or UNIT LINES. First line is series + operation/type. If non-regular, add actual item type on that same line:</p><pre>1800 2 LITE SLIDER, SASH - LEFT ONLY
+ORIGINAL ORDER NUMBER/PO: #1642336</pre><p>Always include the correct screen statement.</p></section>
+<section><h2>Row layout and spacing</h2><p>Never write LINE #, UNIT LINE, or UNIT LINES. Write UNIT CODE only if the quote explicitly labels a real Unit Code.</p><pre>1800 SINGLE HUNG, GLASS - TOP ONLY
 
-UNIT SIZE: 53.75" x 37.75"
-LEFT OPERATING (XO)
+UNIT SIZE: 33.25" x 61.25"
 TOP TEMPERED, DOUBLE STRENGTH
 
-ROUGH OPENING: 54" x 38"
-_</pre><p>Never write LINE #, UNIT LINE, or UNIT LINES. Write UNIT CODE only when the quote explicitly labels a real Unit Code. Otherwise omit it. Rows repeat no header values.</p></section><section><h2>Other rules</h2><p>Use inch marks, never -in. Do not add OPERATING/VENTING for Single Hung, Double Hung, Fixed, etc. Add needed handing for sliders, casements, doors, and mixed units. Tax is No on every row. Rates are stored at exactly two decimals. Correct OCR only in location names. Return the workbook even when totals differ.</p></section></body></html>
+ROUGH OPENING: 33.5" x 61.5"
+_</pre><p>Use exactly one blank line after the first line and exactly one blank line before ROUGH OPENING. Bathroom and every other row use this same layout. Features come after UNIT SIZE. Use inch marks, never “-in”. Do not add operating/venting for Single Hung, Double Hung, Fixed, or similar products. Add needed handing for sliders, casements, doors, and mixed units.</p></section>
+<section><h2>Rates</h2><p>Store actual Rate values rounded to exactly two decimals, not merely formatted to display two decimals. Never store floating-point artifacts such as 86.09999999999999 or 97.23999999999999. Read back every completed Rate before delivering the workbook.</p></section>
+<section><h2>Examples</h2><p>All names, series, types, positions, values, sizes, colors, and features shown here are examples only. Scan each new quote line by line and use only its actual explicit information.</p></section></body></html>
