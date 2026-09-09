@@ -1,20 +1,14 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quote-to-Excel Master Rules</title><style>body{font-family:Segoe UI,Arial,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;line-height:1.55;color:#1f2937}h1,h2{color:#0f4c81}pre{white-space:pre-wrap;background:#f3f5f7;padding:14px;border-radius:4px}section{margin:24px 0}</style></head><body><h1>Quote-to-Excel Master Rules</h1><p><strong>Updated after spacing, rate-storage, and floor-header testing</strong></p>
-<section><h2>Template formatting</h2><p>Preserve the attached workbook exactly. Never add, remove, recolor, or restyle rows/cells, including alternating row colors. If formatting differs, return the workbook and identify the exact difference.</p></section>
-<section><h2>Headers</h2><p>First HEADER is the quote/project name. Create one general-description HEADER. Create HEADER rows only for floors, such as 1ST FLOOR and 2ND FLOOR. Never create room/location headers. Rooms such as Front room, Kitchen, Back room, and Bathroom belong only in Tag.</p><p>List only product categories actually in the quote. Do not add WINDOWS when the quote contains only GLASS and SASH. General-header example only:</p><pre>UNITED VINYL GLASS AND SASH
-1800 REPLACEMENT SERIES
-WHITE EXTERIOR
-WHITE INTERIOR
-LOW-E7-N, SINGLE STRENGTH, ARGON
-WHITE HARDWARE, DOUBLE LOCKS
-NO SCREENS
-_
-ORIGINAL ORDER NUMBER/PO: #1642336</pre><p>Always include the correct screen statement.</p></section>
-<section><h2>Row layout and spacing</h2><p>Never write LINE #, UNIT LINE, or UNIT LINES. Write UNIT CODE only if the quote explicitly labels a real Unit Code.</p><pre>1800 SINGLE HUNG, GLASS - TOP ONLY
-
-UNIT SIZE: 33.25" x 61.25"
-TOP TEMPERED, DOUBLE STRENGTH
-
-ROUGH OPENING: 33.5" x 61.5"
-_</pre><p>Use exactly one blank line after the first line and exactly one blank line before ROUGH OPENING. Bathroom and every other row use this same layout. Features come after UNIT SIZE. Use inch marks, never “-in”. Do not add operating/venting for Single Hung, Double Hung, Fixed, or similar products. Add needed handing for sliders, casements, doors, and mixed units.</p></section>
-<section><h2>Rates</h2><p>Store actual Rate values rounded to exactly two decimals, not merely formatted to display two decimals. Never store floating-point artifacts such as 86.09999999999999 or 97.23999999999999. Read back every completed Rate before delivering the workbook.</p></section>
-<section><h2>Examples</h2><p>All names, series, types, positions, values, sizes, colors, and features shown here are examples only. Scan each new quote line by line and use only its actual explicit information.</p></section></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quote-to-Excel Master Rules</title><style>body{font-family:Segoe UI,Arial,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;line-height:1.55;color:#1f2937}h1,h2{color:#0f4c81}pre{white-space:pre-wrap;background:#f3f5f7;padding:14px;border-radius:4px}section{margin:24px 0}</style></head><body><h1>Quote-to-Excel Master Rules</h1><p><strong>Updated grille, mull, frame, screen, and mulled-unit rules</strong></p>
+<section><h2>Header style</h2><pre>UNITED VINYL WINDOWS
+NEW CONSTRUCTION, 3800 SERIES
+WHITE EXTERIOR, WHITE INTERIOR
+LOWE-2, SINGLE STRENGTH, ARGON
+WHITE FLAT INTERNAL 5/8 COLONIAL GRILLES, UPPER GLASS ONLY, 3W2H PER UNIT, PANES
+NAILING FIN, J CHANNEL
+MULL [MULL TYPE], [MULL SIZE]
+WHITE HARDWARE, WHITE HALF SCREENS
+_</pre><p>Use actual quote values only. For vinyl, always state NEW CONSTRUCTION or REPLACEMENT. Put all series on that line. Grilles go immediately below Glass. Frame-installation information goes below Grilles, then common Mull type/size, then Hardware/Screens. Final header line is exactly _.</p></section>
+<section><h2>Screens and hardware</h2><p>Include common hardware type and common screen type in header. Rows show differences only. Screen wording is colored or uncolored FULL SCREENS/HALF SCREENS, or NO SCREENS. If screen color is not specified, omit the color. Never say “on operating units” or mention screen material.</p></section>
+<section><h2>Grilles</h2><p>Grille counts are PER UNIT, not per mulled combination. For double-hung, slider, or similar units, combine the counts of all sashes/glass panels within that one unit. Identify PANES or BARS when explicit. Do not combine grille counts across separate units in a mull.</p></section>
+<section><h2>Rows and mulled units</h2><p>Never write OVERALL UNIT SIZE. A regular unit uses UNIT SIZE. A mulled combination uses UNIT SIZE - X, where X is the number of units mulled together, such as UNIT SIZE - 3. Common frame, mull, hardware, screen, and grille details stay in the header; only row differences are repeated.</p></section>
+<section><h2>Other rules</h2><p>Only floor headers; rooms in Tag. Preserve exact template formatting. Use exact spacing. Tax is No on every row. Store Rates at exactly two decimals. All examples are examples only; scan each PDF line by line.</p></section></body></html>
